@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e67e22</color>
+    <color name="colorPrimaryDark">#cf6d17</color>
+
+    <color name="colorBtnYellow">#f1c40f</color>
+    <color name="colorBtnGreen">#2ecc71</color>
+    <color name="colorBtnRed">#e74c3c</color>
+
+    <color name="colorTerFill">#5531cd73</color>
+    <color name="colorTerStroke">#F0c0392b</color>
+</resources>

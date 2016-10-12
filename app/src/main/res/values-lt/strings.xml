@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Terrarea</string>
+    <string name="searchText">Paieška</string>
+    <string name="saveLocationDialogTitle">Nauja teritorija</string>
+    <string name="saveLocationDialogTerritoryName">Pavadinimas</string>
+</resources>

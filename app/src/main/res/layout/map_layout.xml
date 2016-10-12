@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:mapType="satellite"
+        map:uiCompass="false"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="true"
+        map:uiTiltGestures="false"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:clickable="true"
+        android:id="@+id/btn_add_location"
+        android:src="@drawable/ic_add_location_white_48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="addLocation"
+        app:backgroundTint="@color/colorBtnYellow"
+        app:layout_anchor="@id/map"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:layout_anchorGravity="bottom|right|end"
+        app:fabSize="normal" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:clickable="true"
+        android:id="@+id/btn_save_location"
+        android:src="@drawable/ic_check_white_48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        android:onClick="saveLocation"
+        app:backgroundTint="@color/colorBtnGreen"
+        app:layout_anchor="@id/map"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:layout_anchorGravity="bottom|right|end"
+        app:fabSize="normal" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:clickable="true"
+        android:id="@+id/btn_abort_location"
+        android:src="@drawable/ic_clear_white_48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        android:onClick="abortLocation"
+        app:backgroundTint="@color/colorBtnRed"
+        app:layout_anchor="@id/map"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:layout_anchorGravity="bottom|left"
+        app:fabSize="normal" />
+
+</android.support.design.widget.CoordinatorLayout>
