@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/settings_category_general">
+
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="switch_store_locations"
+            android:title="@string/setting_store_location"
+            android:defaultValue="true"/>
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/settings_category_territories">
+
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="switch_store_area"
+            android:title="@string/setting_store_area"
+            android:defaultValue="true"/>
+
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="switch_store_perimeter"
+            android:title="@string/setting_store_perimeter"
+            android:defaultValue="true"/>
+
+        <android.support.v7.preference.ListPreference
+            android:key="list_area_types"
+            android:title="@string/setting_area_type"
+            android:summary="@string/setting_area_type_summary"
+            android:entries="@array/area_measurement_types"
+            android:entryValues="@array/area_measurement_types_values"/>
+
+        <android.support.v7.preference.ListPreference
+            android:key="list_perimeter_types"
+            android:title="@string/setting_perimeter_type"
+            android:summary="@string/setting_perimeter_type_summary"
+            android:entries="@array/perimeter_measurement_types"
+            android:entryValues="@array/perimeter_measurement_types_values"/>
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

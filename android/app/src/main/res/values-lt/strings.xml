@@ -2,6 +2,27 @@
 <resources>
     <string name="app_name">Terrarea</string>
     <string name="searchText">Paieška</string>
-    <string name="saveLocationDialogTitle">Nauja teritorija</string>
-    <string name="saveLocationDialogTerritoryName">Pavadinimas</string>
+    <string name="save_location_dialog_title">Nauja teritorija</string>
+    <string name="territory_list_title">Teritorijos</string>
+    <string name="territory_name">Pavadinimas</string>
+    <string name="territory_area">Plotas</string>
+    <string name="territory_perimeter">Perimeteras</string>
+    <string name="error_territory_name">Įrašykite teritorijos pavadinimą</string>
+    <string name="save_location_dialog_action_save">Saugoti</string>
+    <string name="drawer_territories">Teritorijos</string>
+    <string name="drawer_open">Atidaryti</string>
+    <string name="drawer_close">Uždaryti</string>
+    <string name="drawer_group_general">Bendra</string>
+    <string name="drawer_group_user">Naudotojas</string>
+    <string name="sign_in">Prisijungti</string>
+    <string name="settings_category_general">Bendri nustatymai</string>
+    <string name="setting_store_location">Saugoti teritorijas telefone</string>
+    <string name="settings_category_territories">Teritorijų nustatymai</string>
+    <string name="setting_store_area">Saugoti teritorijos plotą</string>
+    <string name="setting_store_perimeter">Saugoti teritorijos perimetrą</string>
+    <string name="setting_area_type">Ploto matavimo vienetas</string>
+    <string name="setting_area_type_summary">Pagal nutylėjimą naudojamas ploto matavimo vienetas</string>
+    <string name="setting_perimeter_type">Perimetro matavimo vienetas</string>
+    <string name="setting_perimeter_type_summary">Pagal nutylėjimą naudojamas perimetro matavimo vienetas</string>
+    <string name="drawer_settings">Nustatymai</string>
 </resources>

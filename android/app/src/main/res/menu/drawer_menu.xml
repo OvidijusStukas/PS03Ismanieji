@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/drawer_group_user">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/drawer_signin"
+                    android:icon="@drawable/ic_search_white_48dp"
+                    android:title="@string/sign_in"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer_group_general">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/drawer_territories"
+                    android:icon="@drawable/ic_place_white_48dp"
+                    android:title="@string/drawer_territories"/>
+
+                <item
+                    android:id="@+id/drawer_settings"
+                    android:icon="@drawable/ic_settings_white_48dp"
+                    android:title="@string/drawer_settings"/>
+            </group>
+        </menu>
+    </item>
+
+
+</menu>

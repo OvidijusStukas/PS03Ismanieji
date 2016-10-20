@@ -2,6 +2,9 @@
 <resources>
     <color name="colorPrimary">#e67e22</color>
     <color name="colorPrimaryDark">#cf6d17</color>
+    <color name="colorAccent">#f39c12</color>
+
+    <color name="colorFormGrey">#474747</color>
 
     <color name="colorBtnYellow">#f1c40f</color>
     <color name="colorBtnGreen">#2ecc71</color>
@@ -9,4 +12,6 @@
 
     <color name="colorTerFill">#5531cd73</color>
     <color name="colorTerStroke">#F0c0392b</color>
+
+    <color name="colorWhite">#ffffff</color>
 </resources>

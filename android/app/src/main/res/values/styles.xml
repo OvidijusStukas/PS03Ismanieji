@@ -1,18 +1,13 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="drawerArrowStyle">@style/MenuDrawerToggleTheme</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
-    <style name="DialogFragmentTheme" parent="AppTheme">
-
-        <item name="android:paddingRight">0dp</item>
-        <item name="android:paddingLeft">0dp</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:windowNoTitle">true</item>
+    <style name="MenuDrawerToggleTheme" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/colorWhite</item>
     </style>
-
 </resources>

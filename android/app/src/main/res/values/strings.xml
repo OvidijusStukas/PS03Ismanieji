@@ -1,6 +1,53 @@
 <resources>
     <string name="app_name">Terrarea</string>
     <string name="searchText">Search</string>
-    <string name="saveLocationDialogTitle">New location</string>
-    <string name="saveLocationDialogTerritoryName">Name</string>
+    <string name="save_location_dialog_title">New location</string>
+    <string name="territory_list_title">Territories</string>
+    <string name="territory_name">Name</string>
+    <string name="territory_area">Area</string>
+    <string name="territory_perimeter">Perimeter</string>
+    <string name="error_territory_name">Enter territory name</string>
+    <string name="save_location_dialog_action_save">Save</string>
+    <string name="drawer_territories">Territories</string>
+
+    <string-array name="area_measurement_types">
+        <item>ha</item>
+        <item>a</item>
+        <item>km²</item>
+        <item>m²</item>
+    </string-array>
+
+    <integer-array name="area_measurement_types_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
+    <string-array name="perimeter_measurement_types">
+        <item>m</item>
+        <item>km</item>
+    </string-array>
+
+    <integer-array name="perimeter_measurement_types_values">
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="drawer_group_general">General</string>
+    <string name="drawer_group_user">User</string>
+    <string name="sign_in">Sign in</string>
+    <string name="settings_category_general">General settings</string>
+    <string name="setting_store_location">Store locations locally</string>
+    <string name="settings_category_territories">Territory settings</string>
+    <string name="setting_store_area">Store territory area</string>
+    <string name="setting_store_perimeter">Store territory perimeter</string>
+    <string name="setting_area_type">Area measurement type</string>
+    <string name="setting_area_type_summary">Default territory area measurement type</string>
+    <string name="setting_perimeter_type">Perimeter measurement type</string>
+    <string name="setting_perimeter_type_summary">Default territory perimeter measurement type</string>
+    <string name="drawer_settings">Settings</string>
+
 </resources>
