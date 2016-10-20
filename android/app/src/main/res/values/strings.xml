@@ -17,22 +17,22 @@
         <item>m²</item>
     </string-array>
 
-    <integer-array name="area_measurement_types_values">
+    <string-array name="area_measurement_types_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </integer-array>
+    </string-array>
 
     <string-array name="perimeter_measurement_types">
         <item>m</item>
         <item>km</item>
     </string-array>
 
-    <integer-array name="perimeter_measurement_types_values">
+    <string-array name="perimeter_measurement_types_values">
         <item>0</item>
         <item>1</item>
-    </integer-array>
+    </string-array>
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>

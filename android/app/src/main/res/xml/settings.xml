@@ -6,21 +6,18 @@
 
         <android.support.v7.preference.SwitchPreferenceCompat
             android:key="switch_store_locations"
-            android:title="@string/setting_store_location"
-            android:defaultValue="true"/>
+            android:title="@string/setting_store_location"/>
     </android.support.v7.preference.PreferenceCategory>
 
     <android.support.v7.preference.PreferenceCategory android:title="@string/settings_category_territories">
 
         <android.support.v7.preference.SwitchPreferenceCompat
             android:key="switch_store_area"
-            android:title="@string/setting_store_area"
-            android:defaultValue="true"/>
+            android:title="@string/setting_store_area"/>
 
         <android.support.v7.preference.SwitchPreferenceCompat
             android:key="switch_store_perimeter"
-            android:title="@string/setting_store_perimeter"
-            android:defaultValue="true"/>
+            android:title="@string/setting_store_perimeter"/>
 
         <android.support.v7.preference.ListPreference
             android:key="list_area_types"
