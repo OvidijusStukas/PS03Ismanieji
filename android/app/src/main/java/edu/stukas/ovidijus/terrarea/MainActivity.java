@@ -1,10 +1,11 @@
 package edu.stukas.ovidijus.terrarea;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -13,8 +14,10 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,7 +30,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import edu.stukas.ovidijus.terrarea.data.MarkingMode;
-import edu.stukas.ovidijus.terrarea.fragment.SaveLocationDialogFragment;
 import edu.stukas.ovidijus.terrarea.fragment.SettingsFragment;
 import edu.stukas.ovidijus.terrarea.fragment.TerritoryListFragment;
 import edu.stukas.ovidijus.terrarea.handler.GoogleMapButtonVisibilityHandler;
@@ -88,9 +90,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View v) {
                 googleMapButtonVisibilityHandler.applicationChanged(MarkingMode.OFF);
 
-                DialogFragment saveLocationDialogFragment = new SaveLocationDialogFragment();
-                saveLocationDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
-                saveLocationDialogFragment.show(getSupportFragmentManager(), "Dialog");
+                AlertDialog saveLocationDialog = getSaveLocationDialog();
+                saveLocationDialog.show();
 
                 googleMapTerritoryHandler.clearSession();
             }
@@ -190,8 +191,86 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 settingsFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme);
                 settingsFragment.show(getSupportFragmentManager(), "Settings");
                 break;
+            case R.id.drawer_signin:
+                drawer.closeDrawer(GravityCompat.START);
+
+                getLoginDialog().show();
+                break;
         }
 
         return false;
+    }
+
+    private AlertDialog getSaveLocationDialog() {
+        Context context = MainActivity.this;
+
+        return new AlertDialog.Builder(context)
+                .setView(LayoutInflater
+                    .from(context)
+                    .inflate(R.layout.save_location_layout, null))
+                .setTitle(R.string.save_location_dialog_title)
+                .setCancelable(true)
+                .setPositiveButton(R.string.save_location_dialog_action_save, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .setNegativeButton(R.string.save_location_dialog_action_cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .create();
+    }
+
+    private AlertDialog getLoginDialog() {
+        Context context = MainActivity.this;
+
+        return new AlertDialog.Builder(context)
+                .setView(LayoutInflater
+                        .from(context)
+                        .inflate(R.layout.login_layout, null))
+                .setTitle(R.string.drawer_sign_in)
+                .setCancelable(true)
+                .setPositiveButton(R.string.login_submit, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .setNegativeButton(R.string.login_register, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                        getRegistrationDialog().show();
+                    }
+                })
+                .create();
+    }
+
+    private AlertDialog getRegistrationDialog() {
+        Context context = MainActivity.this;
+
+        return new AlertDialog.Builder(context)
+                .setView(LayoutInflater
+                        .from(context)
+                        .inflate(R.layout.register_layout, null))
+                .setTitle(R.string.register_title)
+                .setCancelable(true)
+                .setPositiveButton(R.string.login_register, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .setNegativeButton(R.string.save_location_dialog_action_cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .create();
     }
 }

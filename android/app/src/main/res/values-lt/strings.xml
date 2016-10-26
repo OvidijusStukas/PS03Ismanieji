@@ -9,12 +9,13 @@
     <string name="territory_perimeter">Perimeteras</string>
     <string name="error_territory_name">Įrašykite teritorijos pavadinimą</string>
     <string name="save_location_dialog_action_save">Saugoti</string>
+    <string name="save_location_dialog_action_cancel">Atšaukti</string>
     <string name="drawer_territories">Teritorijos</string>
     <string name="drawer_open">Atidaryti</string>
     <string name="drawer_close">Uždaryti</string>
     <string name="drawer_group_general">Bendra</string>
     <string name="drawer_group_user">Naudotojas</string>
-    <string name="sign_in">Prisijungti</string>
+    <string name="drawer_sign_in">Prisijungti</string>
     <string name="settings_category_general">Bendri nustatymai</string>
     <string name="setting_store_location">Saugoti teritorijas telefone</string>
     <string name="settings_category_territories">Teritorijų nustatymai</string>
@@ -25,4 +26,12 @@
     <string name="setting_perimeter_type">Perimetro matavimo vienetas</string>
     <string name="setting_perimeter_type_summary">Pagal nutylėjimą naudojamas perimetro matavimo vienetas</string>
     <string name="drawer_settings">Nustatymai</string>
+    <string name="login_username">Prisijungimo vardas</string>
+    <string name="login_password">Slaptažodis</string>
+    <string name="login_password_repeat">Pakortoti slaptažodi</string>
+    <string name="login_submit">Prisijungti</string>
+    <string name="login_register">Registruotis</string>
+    <string name="register_title">Registracija</string>
+    <string name="territory_item_area_text">Teritorijos bendras plotas %.2f.</string>
+    <string name="territory_item_perimeter_text">Teritorijos bendras perimetras %.2f.</string>
 </resources>

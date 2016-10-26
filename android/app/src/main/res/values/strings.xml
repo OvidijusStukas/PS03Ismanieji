@@ -8,6 +8,7 @@
     <string name="territory_perimeter">Perimeter</string>
     <string name="error_territory_name">Enter territory name</string>
     <string name="save_location_dialog_action_save">Save</string>
+    <string name="save_location_dialog_action_cancel">Cancel</string>
     <string name="drawer_territories">Territories</string>
 
     <string-array name="area_measurement_types">
@@ -38,7 +39,7 @@
     <string name="drawer_close">Close</string>
     <string name="drawer_group_general">General</string>
     <string name="drawer_group_user">User</string>
-    <string name="sign_in">Sign in</string>
+    <string name="drawer_sign_in">Sign in</string>
     <string name="settings_category_general">General settings</string>
     <string name="setting_store_location">Store locations locally</string>
     <string name="settings_category_territories">Territory settings</string>
@@ -49,5 +50,12 @@
     <string name="setting_perimeter_type">Perimeter measurement type</string>
     <string name="setting_perimeter_type_summary">Default territory perimeter measurement type</string>
     <string name="drawer_settings">Settings</string>
-
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_password_repeat">Repeat password</string>
+    <string name="login_submit">Login</string>
+    <string name="login_register">Register</string>
+    <string name="register_title">Register</string>
+    <string name="territory_item_area_text">Territory total area %.2f.</string>
+    <string name="territory_item_perimeter_text">Territory total perimeter %.2f.</string>
 </resources>

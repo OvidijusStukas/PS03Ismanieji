@@ -3,8 +3,17 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="drawerArrowStyle">@style/MenuDrawerToggleTheme</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="searchViewStyle">@style/AppTheme.SearchView</item>
+    </style>
+
+    <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="searchHintIcon">@null</item>
+        <item name="searchIcon">@null</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="closeIcon">@drawable/ic_clear_white_24dp</item>
     </style>
 
     <style name="MenuDrawerToggleTheme" parent="Widget.AppCompat.DrawerArrowToggle">

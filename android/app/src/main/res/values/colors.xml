@@ -14,4 +14,5 @@
     <color name="colorTerStroke">#F0c0392b</color>
 
     <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
 </resources>
