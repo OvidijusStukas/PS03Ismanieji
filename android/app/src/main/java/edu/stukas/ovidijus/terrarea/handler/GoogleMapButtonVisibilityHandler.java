@@ -20,10 +20,14 @@ public class GoogleMapButtonVisibilityHandler implements GoogleMap.OnCameraMoveL
     private List<FloatingActionButton> statusOnFABs;
     private List<FloatingActionButton> statusOffFABs;
 
+    public static GoogleMapButtonVisibilityHandler instance;
+
     public GoogleMapButtonVisibilityHandler() {
         markingMode = MarkingMode.OFF;
         statusOnFABs = new ArrayList<>();
         statusOffFABs = new ArrayList<>();
+
+        instance = this;
     }
 
     public void registerFAB(FloatingActionButton fab, MarkingMode markingMode) {

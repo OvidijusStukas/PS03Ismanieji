@@ -56,6 +56,16 @@
     <string name="login_submit">Login</string>
     <string name="login_register">Register</string>
     <string name="register_title">Register</string>
-    <string name="territory_item_area_text">Territory total area %.2f.</string>
-    <string name="territory_item_perimeter_text">Territory total perimeter %.2f.</string>
+    <string name="territory_item_area_text">Territory total area %.2f</string>
+    <string name="territory_item_perimeter_text">Territory total perimeter %.2f</string>
+    <string name="territory_item_area_not_saved">The area was not saved for this territory</string>
+    <string name="territory_item_perimeter_not_saved">The perimeter was not saved for this territory</string>
+    <string name="territory_list_empty">There are no stored territories</string>
+    <string name="need_three_points">You need to mark at least 3 points to save location</string>
+    <string name="territory_saved">Territory saved</string>
+    <string name="empty_territory_name">Territory name is required</string>
+    <string name="territory_validation">You must provide information</string>
+    <string name="territory_removed">The territory %s was removed</string>
+    <string name="territory_no_positions">The territory %s does not have stored positions</string>
+    <string name="territory_updated">The territory was updated</string>
 </resources>

@@ -32,6 +32,16 @@
     <string name="login_submit">Prisijungti</string>
     <string name="login_register">Registruotis</string>
     <string name="register_title">Registracija</string>
-    <string name="territory_item_area_text">Teritorijos bendras plotas %.2f.</string>
-    <string name="territory_item_perimeter_text">Teritorijos bendras perimetras %.2f.</string>
+    <string name="territory_item_area_text">Teritorijos bendras plotas %.2f</string>
+    <string name="territory_item_perimeter_text">Teritorijos bendras perimetras %.2f</string>
+    <string name="territory_item_area_not_saved">Plotas nebuvo išsaugotas kartu su teritorija</string>
+    <string name="territory_item_perimeter_not_saved">Perimetras nebuvo išsaugotas kartu su teritorija</string>
+    <string name="territory_list_empty">Nėra išsaugotų teritorijų</string>
+    <string name="need_three_points">Privaloma pažymėti 3 taškus prieš saugant teritoriją</string>
+    <string name="territory_saved">Teritorija išsaugota</string>
+    <string name="empty_territory_name">Teritorija pavadinimas privalomas</string>
+    <string name="territory_validation">Privaloma įvesti visus laukus</string>
+    <string name="territory_removed">Teritorija %s buvo ištrinta</string>
+    <string name="territory_no_positions">Teritorija %s neturi išsaugotų pozicijų</string>
+    <string name="territory_updated">Teritoja buvo atnaujinta</string>
 </resources>

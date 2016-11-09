@@ -3,6 +3,7 @@ package edu.stukas.ovidijus.terrarea.handler;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.stukas.ovidijus.terrarea.R;
+import edu.stukas.ovidijus.terrarea.data.MarkingMode;
+import edu.stukas.ovidijus.terrarea.data.Territory;
 
 /**
  * @author Ovidijus Stukas
@@ -35,11 +38,15 @@ public class GoogleMapTerritoryHandler implements GoogleMap.OnMapClickListener,
 
     private double sessionArea;
     private double sessionPerimeter;
+    private Territory territory;
+
+    public static GoogleMapTerritoryHandler instance;
 
     public GoogleMapTerritoryHandler(Context context, GoogleMap googleMap) {
         this.context = context;
         this.googleMap = googleMap;
         this.sessionMarkers = new ArrayList<>();
+        instance = this;
     }
 
     public void startSession() {
@@ -54,6 +61,7 @@ public class GoogleMapTerritoryHandler implements GoogleMap.OnMapClickListener,
         sessionPerimeter = 0;
         sessionMarkers.clear();
         sessionPolyline = null;
+        territory = null;
         googleMap.setOnMarkerClickListener(null);
         googleMap.setOnMarkerDragListener(null);
         googleMap.setOnMapClickListener(null);
@@ -88,30 +96,33 @@ public class GoogleMapTerritoryHandler implements GoogleMap.OnMapClickListener,
         }
     }
 
-    private List<LatLng> getSessionPositions() {
-        List<LatLng> positions = new ArrayList<>(sessionMarkers.size());
-        for(Marker m : sessionMarkers)
-            positions.add(m.getPosition());
-        return positions;
+    private void addSessionLocation(List<LatLng> positions)
+    {
+        for (LatLng latLng : positions)
+        {
+            sessionMarkers.add(googleMap.addMarker(new MarkerOptions()
+                    .position(latLng)
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_place_white_36dp))
+                    .draggable(true)));
+
+            if (sessionPolyline == null) {
+                sessionPolyline = googleMap.addPolyline(new PolylineOptions()
+                        .add(latLng)
+                        .width(3.5f)
+                        .color(ContextCompat.getColor(context, R.color.colorTerStroke))
+                        .geodesic(true));
+            }
+            else {
+                updateSessionPositions();
+            }
+        }
     }
 
     @Override
-    public void onMapClick(LatLng latLng) {
-        sessionMarkers.add(googleMap.addMarker(new MarkerOptions()
-                .position(latLng)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_place_white_36dp))
-                .draggable(true)));
-
-        if (sessionPolyline == null) {
-            sessionPolyline = googleMap.addPolyline(new PolylineOptions()
-                    .add(latLng)
-                    .width(3.5f)
-                    .color(ContextCompat.getColor(context, R.color.colorTerStroke))
-                    .geodesic(true));
-        }
-        else {
-            updateSessionPositions();
-        }
+    public void onMapClick(final LatLng latLng) {
+        List<LatLng> positions = new ArrayList<>(1);
+        positions.add(latLng);
+        addSessionLocation(positions);
     }
 
     @Override
@@ -146,5 +157,29 @@ public class GoogleMapTerritoryHandler implements GoogleMap.OnMapClickListener,
 
     public double getSessionPerimeter() {
         return sessionPerimeter;
+    }
+
+    public List<LatLng> getSessionPositions() {
+        List<LatLng> positions = new ArrayList<>(sessionMarkers.size());
+        for(Marker m : sessionMarkers)
+            positions.add(m.getPosition());
+        return positions;
+    }
+
+    public void focusTerritory(Territory territory) {
+        clearSession();
+        startSession();
+
+        this.territory = territory;
+        List<LatLng> positions = territory.getPositions();
+        addSessionLocation(positions);
+
+        GoogleMapButtonVisibilityHandler.instance.applicationChanged(MarkingMode.ON);
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(positions.get(0), 16.0f));
+    }
+
+    public Territory getTerritory()
+    {
+        return territory;
     }
 }

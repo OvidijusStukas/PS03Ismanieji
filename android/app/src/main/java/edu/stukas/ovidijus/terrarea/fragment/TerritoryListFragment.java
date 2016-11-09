@@ -1,6 +1,7 @@
 package edu.stukas.ovidijus.terrarea.fragment;
 
 import android.app.SearchManager;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,13 @@ public class TerritoryListFragment extends TerrareaDialogFragment implements Fil
 
     public TerritoryListFragment() {
         super(R.layout.territory_layout, R.string.drawer_territories);
-        territoryAdapter = new TerritoryAdapter();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        territoryAdapter = new TerritoryAdapter(context, this);
         territoryListFilter = new TerritoryListFilter();
     }
 
@@ -84,6 +92,19 @@ public class TerritoryListFragment extends TerrareaDialogFragment implements Fil
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             recyclerView.setAdapter(territoryAdapter);
+
+            TextView emptyView = (TextView) rootView.findViewById(R.id.territory_empty_view);
+
+            if (territoryAdapter.getItemCount() == 0)
+            {
+                recyclerView.setVisibility(View.GONE);
+                emptyView.setVisibility(View.VISIBLE);
+            }
+            else
+            {
+                recyclerView.setVisibility(View.VISIBLE);
+                emptyView.setVisibility(View.GONE);
+            }
         }
 
         return rootView;
