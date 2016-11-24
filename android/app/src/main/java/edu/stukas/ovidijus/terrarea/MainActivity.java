@@ -49,6 +49,7 @@ import edu.stukas.ovidijus.terrarea.fragment.TerritoryListFragment;
 import edu.stukas.ovidijus.terrarea.handler.GoogleMapButtonVisibilityHandler;
 import edu.stukas.ovidijus.terrarea.handler.GoogleMapTerritoryHandler;
 import edu.stukas.ovidijus.terrarea.handler.GooglePlacesSearchHandler;
+import edu.stukas.ovidijus.terrarea.network.LoginTask;
 import edu.stukas.ovidijus.terrarea.util.ConversionUtil;
 import edu.stukas.ovidijus.terrarea.util.TerrareaSettingKeys;
 
@@ -382,7 +383,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .setPositiveButton(R.string.login_submit, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        AlertDialog dialog = (AlertDialog) dialogInterface;
 
+                        EditText login = (EditText) dialog.findViewById(R.id.input_user_username);
+                        EditText password = (EditText) dialog.findViewById(R.id.input_user_password);
+
+                        String requestUrl = String.format("%s?username=%s&password=%s",
+                                "http://158.129.18.239:8080/user/login",
+                                login.getText().toString(), password.getText().toString());
+
+                        LoginTask restTask = new LoginTask(MainActivity.this);
+                        restTask.execute(requestUrl);
                     }
                 })
                 .setNegativeButton(R.string.login_register, new DialogInterface.OnClickListener() {
